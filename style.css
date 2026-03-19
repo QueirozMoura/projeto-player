@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Imagem da capa */
+img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(29, 185, 84, 0.2);
+}
+
+
+
+/* Descrição */
+.descricao {
+  text-align: center;
+  margin-bottom: 35px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.descricao h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.descricao p {
+  font-size: 14px;
+  color: #b3b3b3;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* Barra de duração */
+.duracao {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 30px;
+}
+
+progress {
+  width: 100%;
+  height: 6px;
+  border: none;
+  border-radius: 2px;
+  background-color: #404040;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #404040;
+  border-radius: 2px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #1db954;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+progress::-moz-progress-bar {
+  background-color: #1db954;
+  border-radius: 2px;
+}
+
+.ponto {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #1db954;
+  border-radius: 50%;
+  top: 200%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(29, 185, 84, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.barra:hover .ponto {
+  opacity: 1;
+}
+
+/* Tempo */
+.tempo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #b3b3b3;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-top: 20px;
+}
+
+/* Player de controles */
+.player {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.player i {
+  font-size: 24px;
+  color: #b3b3b3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player i:hover {
+  color: #1db954;
+  transform: scale(1.15);
+}
+
+.player i:active {
+  transform: scale(0.95);
+}
+
+.player .fa-play,
+.player .fa-pause {
+  font-size: 32px;
+  color: #1db954;
+}
+
+.player .fa-play:hover,
+.player .fa-pause:hover {
+  color: #1ed760;
+  filter: drop-shadow(0 0 12px rgba(29, 185, 84, 0.6));
+}
+
+/* Audio (oculto) */
+audio {
+  display: none;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets e telas pequenas (768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  img {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 35px;
+  }
+
+  .descricao h2 {
+    font-size: 24px;
+  }
+
+  .duracao {
+    max-width: 280px;
+  }
+
+  .player {
+    gap: 25px;
+  }
+
+  .player i {
+    font-size: 20px;
+  }
+
+  .player .fa-play,
+  .player .fa-pause {
+    font-size: 28px;
+  }
+}
+
+/* Celulares (480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 25px;
+  }
+
+  .descricao h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .descricao p {
+    font-size: 13px;
+  }
+
+  .duracao {
+    max-width: 240px;
+    margin-bottom: 25px;
+  }
+
+  .tempo {
+    font-size: 11px;
+  }
+
+  .player {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .player i {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .player .fa-play,
+  .player .fa-pause {
+    font-size: 24px;
+  }
+}
+
+/* Celulares muito pequenos (360px) */
+@media (max-width: 360px) {
+  img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .descricao h2 {
+    font-size: 18px;
+  }
+
+  .player {
+    gap: 18px;
+  }
+
+  .player i {
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .player .fa-play,
+  .player .fa-pause {
+    font-size: 20px;
+  }
+}
+
+/* Telas grandes (1200px+) */
+@media (min-width: 1200px) {
+  img {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 50px;
+  }
+
+  .descricao h2 {
+    font-size: 32px;
+  }
+
+  .duracao {
+    max-width: 400px;
+  }
+
+  .player {
+    gap: 40px;
+  }
+
+  .player i {
+    font-size: 28px;
+  }
+
+  .player .fa-play,
+  .player .fa-pause {
+    font-size: 36px;
+  }
+}

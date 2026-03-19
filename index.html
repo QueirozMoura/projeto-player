@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto player spotify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img class="capa" src="imagens/redcharlie-vQVWIsIBafA-unsplash.jpg" alt="Porsche" />
+
+    <div class="descricao">
+      <h2>Player Music</h2>
+      <p><i>O melhor player de música</i></p>
+    </div>
+    <div class="duracao">
+      <div class="barra">
+        <progress value="50" max="100"></progress>
+        <div class="ponto"></div>
+      </div>
+      <div class="tempo">
+        <span class="inicio">0:00</span>
+        <span class="fim">3:00</span>
+      </div>
+    </div>
+    <div class="player">
+      <i class="fa-solid fa-backward-fast"></i>
+      <i class="fa-solid fa-play botao-play"></i>
+      <i class="fa-solid fa-forward-fast"></i>
+    </div>
+    <div class="lista">
+      <p class="musicas" data-src="musicas/Please me x Titanium_spotdown.org.mp3" data-img="imagens/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg"></p>
+      <p class="musicas" data-src="musicas/brodyaga_spotdown.org.mp3" data-img="imagens/brandon-atchison-ndrjunfmqwY-unsplash.jpg">Brodyaga - SpotDown</p>
+      <p class="musicas" data-src="musicas/None Of Ur Friends Business - Radio Edit_spotdown.org.mp3" data-img="imagens/redcharlie-vQVWIsIBafA-unsplash.jpg">None Of Ur Friends Business - Radio Edit</p>
+    </div>
+    <audio src="musicas/brodyaga_spotdown.org.mp3"></audio>
+  </body>
+
+  <script src="script.js"></script>
+</html>
